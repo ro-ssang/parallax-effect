@@ -461,15 +461,25 @@
         // info
         $('.paraScroll span').text(parseInt(scrollTop)); // 브라우저의 스크롤 값을 텍스트로 표시, parseInt(): 문자열을 정수로 변경
 
-        $('.offset1').text(parseInt($('#section1').offset().top) + 'px');
-        $('.offset2').text(parseInt($('#section2').offset().top) + 'px');
-        $('.offset3').text(parseInt($('#section3').offset().top) + 'px');
-        $('.offset4').text(parseInt($('#section4').offset().top) + 'px');
-        $('.offset5').text(parseInt($('#section5').offset().top) + 'px');
-        $('.offset6').text(parseInt($('#section6').offset().top) + 'px');
-        $('.offset7').text(parseInt($('#section7').offset().top) + 'px');
-        $('.offset8').text(parseInt($('#section8').offset().top) + 'px');
-        $('.offset9').text(parseInt($('#section9').offset().top) + 'px');
+        // $('.offset1').text(parseInt($('#section1').offset().top) + 'px');
+        // $('.offset2').text(parseInt($('#section2').offset().top) + 'px');
+        // $('.offset3').text(parseInt($('#section3').offset().top) + 'px');
+        // $('.offset4').text(parseInt($('#section4').offset().top) + 'px');
+        // $('.offset5').text(parseInt($('#section5').offset().top) + 'px');
+        // $('.offset6').text(parseInt($('#section6').offset().top) + 'px');
+        // $('.offset7').text(parseInt($('#section7').offset().top) + 'px');
+        // $('.offset8').text(parseInt($('#section8').offset().top) + 'px');
+        // $('.offset9').text(parseInt($('#section9').offset().top) + 'px');
+
+        // for문
+        // for (let i = 1; i <= 9; i++) {
+        //   $('.offset' + i).text(parseInt($('#section' + i).offset().top) + 'px');
+        // }
+
+        // each()
+        $('.paraInfo ul li').each(function (index) {
+          $('.offset' + (index + 1)).text(parseInt($('#section' + (index + 1)).offset().top) + 'px');
+        });
       });
     </script>
   </body>

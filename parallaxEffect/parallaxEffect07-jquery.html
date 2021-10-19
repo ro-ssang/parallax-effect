@@ -680,7 +680,24 @@
                 }, 50 * index);
               });
           }
+
+          if ($(window).scrollTop() > $(this).offset().top - 2) {
+            $('.paraNav ul li').eq(i).addClass('active').siblings().removeClass('active');
+          }
         });
+
+        //출력
+        $('.paraScroll span').text(parseInt($(window).scrollTop()));
+      });
+
+      //메뉴
+      $('.paraNav ul li').click(function (e) {
+        e.preventDefault();
+        let target = $(this);
+        let index = target.index();
+        let section = $('.content__item').eq(index);
+        let offset = section.offset().top;
+        $('html, body').animate({ scrollTop: offset }, 400, 'easeInOutCirc');
       });
     </script>
   </body>

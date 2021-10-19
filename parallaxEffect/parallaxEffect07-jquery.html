@@ -670,17 +670,15 @@
         // each()
         $('.content__item').each(function (i) {
           if ($(window).scrollTop() > $('.content__item').eq(i).offset().top) {
-            if ($(window).scrollTop() > $('.content__item').eq(i).offset().top - $(window).height() / 2) {
-              $(this)
-                .find('span')
-                .each(function (index) {
-                  setTimeout(function () {
-                    $('#section' + (i + 1) + ' .content__item__desc span')
-                      .eq(index)
-                      .addClass('show');
-                  }, 50 * index);
-                });
-            }
+            $(this)
+              .find('span')
+              .each(function (index) {
+                setTimeout(function () {
+                  $('#section' + (i + 1) + ' .content__item__desc span')
+                    .eq(index)
+                    .addClass('show');
+                }, 50 * index);
+              });
           }
         });
       });
